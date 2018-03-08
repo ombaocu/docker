@@ -3,14 +3,14 @@ services:
   web:
     image: odoo:10.0
     depends_on:
-      - db
+      - db2
     ports:
       - "8069:8069"
     volumes:
       - odoo-web-data:/var/lib/odoo
       - ./config:/etc/odoo
       - ./addons:/mnt/extra-addons
-  db:
+  db2:
     image: postgres:9.5
     environment:
       - POSTGRES_PASSWORD=odoo
